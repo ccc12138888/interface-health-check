@@ -1,8 +1,3 @@
-好的 👌
-下面是一份 **完整、专业、可直接放到 GitHub 的 README.md**，完全基于你现在的项目能力（Gin + Gorm + Cron + 协程池 + Context + 防重叠执行 + Dashboard），**没有乱写不存在的功能**。
-
-你可以直接复制为 `README.md` 使用。
-
 ---
 
 # 🚀 Interface Health Check
@@ -165,7 +160,7 @@ interface-health-check/
 ### 1️⃣ 克隆项目
 
 ```bash
-git clone https://github.com/yourname/interface-health-check.git
+git clone https://github.com/ccc12138888/interface-health-check.git
 cd interface-health-check
 ```
 
