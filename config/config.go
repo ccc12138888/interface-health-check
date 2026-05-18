@@ -35,7 +35,6 @@ func GetDSN() string {
 }
 
 
- //新增：支持从 .env 读取 MaxWorker
 func GetMaxWorker() int {
 	valueStr := GetEnv("MAX_WORKER", "5")
 
@@ -46,7 +45,10 @@ func GetMaxWorker() int {
 	return value
 }
 
-//新增：支持从 .env 读取 CronSpec
+/////////////////////////////////////////////////////
+// 👇 新增：支持从 .env 读取 CronSpec
+/////////////////////////////////////////////////////
+
 func GetCronSpec() string {
 	return GetEnv("CRON_SPEC", "@every 1m")
 }
