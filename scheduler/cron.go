@@ -20,7 +20,7 @@ var mu sync.Mutex
 // 定义运行状态
 var isRunning bool
 
-// StartCron 启动定时巡检（企业级防重叠版本）
+// StartCron 启动定时巡检
 func StartCron() *cron.Cron {
 
 	spec := config.GetCronSpec()
@@ -36,7 +36,7 @@ func StartCron() *cron.Cron {
 
 		if isRunning {
 			// 如果上一轮还没执行完，直接跳过
-			log.Println("⚠ 上一次巡检仍在执行，本次跳过")
+			log.Println("上一次巡检仍在执行，本次跳过")
 			mu.Unlock()
 			return
 		}
@@ -45,14 +45,14 @@ func StartCron() *cron.Cron {
 		isRunning = true
 		mu.Unlock()
 
-		log.Println("🚀 开始执行定时巡检任务")
+		log.Println("开始执行定时巡检任务")
 
 		// 2️⃣ 查询接口
 		var apis []models.APIInfo
 		database.DB.Find(&apis)
 
 		if len(apis) == 0 {
-			log.Println("⚠ 没有需要巡检的接口")
+			log.Println("没有需要巡检的接口")
 
 			mu.Lock()
 			isRunning = false

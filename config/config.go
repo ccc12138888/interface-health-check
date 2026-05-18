@@ -45,10 +45,6 @@ func GetMaxWorker() int {
 	return value
 }
 
-/////////////////////////////////////////////////////
-// 👇 新增：支持从 .env 读取 CronSpec
-/////////////////////////////////////////////////////
-
 func GetCronSpec() string {
 	return GetEnv("CRON_SPEC", "@every 1m")
 }
